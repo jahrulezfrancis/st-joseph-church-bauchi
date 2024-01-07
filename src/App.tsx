@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      The homepage
+      <h2>Welcome to the offical website of St Joseph the walker church, Bauchi</h2>
     </div>
   )
 }
