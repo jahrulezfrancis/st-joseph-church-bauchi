@@ -1,12 +1,11 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { PrimaryColor } from "../Reuseables/colors";
 
 
 export default function NavContainer({ children }: { children: ReactNode }) {
     return (
         <Box>
-            <Flex align="center" h={100} bg={PrimaryColor} padding={7}>
+            <Flex align="center" h={100} bg={"#910A67"} padding={7}>
                 {children}
             </Flex>
         </Box>
