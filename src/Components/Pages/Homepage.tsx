@@ -2,6 +2,7 @@ import { Box, Button, Heading, Stack, Text, Center, Flex } from "@chakra-ui/reac
 import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
+import ParishOfficialsCard from "../Cards/OfficialsCard";
 
 
 export default function Homepage() {
@@ -31,6 +32,18 @@ export default function Homepage() {
                     </Text>
                 </Stack>
             </Center>
+
+
+            {/* parish officials section  */}
+            <Box>
+                <Heading textAlign="center">Our Parish Officials</Heading>
+                <Flex justify="center" wrap="wrap" gap={10}>
+                    <ParishOfficialsCard personName="Fr Claytus" personImage="" personPosition="Parish Priest" />
+                    <ParishOfficialsCard personName="Fr Kameze" personImage="" personPosition="Asst Parish Priest" />
+                    <ParishOfficialsCard personName="Cath Peter Tsakani" personImage="" personPosition="" />
+                </Flex>
+            </Box>
+
             {/* worship section */}
             <Box>
                 <Heading textAlign="center" padding={5}>Our masses</Heading>
