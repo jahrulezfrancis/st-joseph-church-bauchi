@@ -3,6 +3,7 @@ import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
 import ParishOfficialsCard from "../Cards/OfficialsCard";
+import EventCards from "../Cards/EventCards";
 
 
 export default function Homepage() {
@@ -65,6 +66,11 @@ export default function Homepage() {
             </Box>
 
             {/* event section */}
+            <Box>
+                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
+                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
+                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
+            </Box>
 
             {/* donations */}
 
