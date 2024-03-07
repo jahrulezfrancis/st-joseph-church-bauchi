@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Stack, Text, Center, Flex } from "@chakra-ui/react";
+import { Box, Button, Heading, Stack, Text, Center, Flex, Divider } from "@chakra-ui/react";
 import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
@@ -27,6 +27,7 @@ export default function Homepage() {
                     </Stack>
                 </Stack>
             </Box>
+
             {/* about section */}
             <Center margin={10}>
                 <Stack padding={10} _hover={{ boxShadow: "0px 0px 22px 3px rgba(145,10,103,0.22)" }} align="center" textAlign="center" width={fluidBox}>
@@ -71,8 +72,6 @@ export default function Homepage() {
             {/* event section */}
             <Box>
                 <Flex gap={10} wrap="wrap">
-                    {/* <EventCards eventTitle="Stations of the Cross" eventDescription="Experience the journey of Jesus through the Stations of the Cross, reflecting on his path to Calvary with prayer and contemplation" eventDate="Wed & Fri" evenImage={CrossImage} eventLink="" />
-                    <EventCards eventTitle="Weekly Worship" eventDescription="We come together as a family that we are to worship God through praises and worships" eventDate="Wednessdays" evenImage={WeeklyWorship} eventLink="" /> */}
                     <EventCards eventTitle="Parish Day" eventDescription="Description for parish day comes here" eventDate="20th March" eventImage={ParishDayCelebration} eventLink="" />
                     <EventCards eventTitle="Catechist Day" eventDescription="Description for Catechist day goes here" eventDate="20th March" eventImage={Catechist} eventLink="" />
                     <EventCards eventTitle="Family seed sowing" eventDescription="Family seed sowing is currently ongoing" eventDate="20th March" eventImage={SeedSowingImage} eventLink="" />
@@ -80,13 +79,41 @@ export default function Homepage() {
             </Box>
 
             {/* donations */}
-
-            {/* contact us */}
+            <Box mt="100px">
+                <Stack textAlign="center">
+                    <Heading>Help spread the word of God through Donations</Heading>
+                    <Text> Support the ministries and outreach of St. Joseph the Worker Catholic Church through your generous donations. Your contributions help us continue our mission of service and love.</Text>
+                </Stack>
+                <Flex mt="50px" justify="center" wrap="wrap" gap={10}>
+                    <Stack align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                        <Heading>Cash Donations</Heading>
+                        <Text>Consider supporting our cause with a cash donation. Your financial contribution will allow us to continue providing essential services and support to the parish and to those in need. With your generosity, we can make a significant impact and help improve the lives of individuals in our community. Any amount donated makes a difference, and we are grateful for your support.</Text>
+                        <Button>Donate now</Button>
+                    </Stack>
+                    <Stack align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                        <Heading>Clothes donation</Heading>
+                        <Text>Help us make a difference by donating clothes to those in need. Your contribution of gently used clothing can provide warmth and comfort to individuals facing challenging circumstances. By donating clothes, you are directly impacting the lives of others and making a positive difference in our community. Your support is truly appreciated.</Text>
+                        <Button>Donate now</Button>
+                    </Stack>
+                </Flex>
+            </Box>
 
             {/* gallery */}
-            <Box mt={100} mb={100}>
-                Spacer
+            <Box>
+                <Heading>Saint Joseph's Gallery</Heading>
+                <Text>
+                    View photos and videos of our church events, services, community projects, and cultural celebrations that reflect the vibrant spirit of St. Joseph the Worker Catholic Church.
+                </Text>
             </Box>
+
+            <footer>
+                <Box mt={10}>
+                    <Stack>
+                        <Divider />
+                        <Text padding={"20px 0px"} align="center">Copyright © 2024 | 7thWeb Technologies</Text>
+                    </Stack>
+                </Box>
+            </footer>
         </Box >
     )
 }
