@@ -2,7 +2,7 @@ import { Box, Stack, Button, Image, Heading, Text, } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 interface EventCardProps {
-    evenImage: string;
+    eventImage: string;
     eventTitle: string;
     eventDescription: string;
     eventDate: string;
@@ -11,16 +11,16 @@ interface EventCardProps {
 
 export default function EventCards(props: EventCardProps) {
     return (
-        <Box>
-            <Stack gap={4} padding="10px" width="300px">
+        <Box borderRadius={5} boxShadow="0px 0px 39px 3px rgba(202,201,203,0.75)"        >
+            <Stack height="100%" justify="space-evenly" gap={4} padding="15px" width="300px">
                 <Box position="relative">
-                    <Image width='300px' src={props.evenImage} alt="event image" />
-                    <Box padding="10px" left={"210px"} top={2} position="absolute" bg="blue">
+                    <Image width='300px' src={props.eventImage} alt="event image" />
+                    <Box width="80px" padding="10px" left={"190px"} top={2} position="absolute" bg="blue">
                         <Text>{props.eventDate}</Text>
                     </Box>
                 </Box>
                 <Heading fontSize="20px">{props.eventTitle}</Heading>
-                <Text textAlign="justify">{props.eventDescription}
+                <Text textAlign="start">{props.eventDescription}
                 </Text>
                 <Link to={props.eventLink}>
                     <Button>Learn more</Button>
