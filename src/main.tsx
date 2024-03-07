@@ -2,23 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-const { Button } = chakraTheme.components
-import { ChakraBaseProvider, extendBaseTheme, theme as chakraTheme, } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
 
 
-const theme = extendBaseTheme({
-  components: {
-    Button,
-  },
-})
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ChakraBaseProvider theme={theme}>
+    <ChakraProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </ChakraBaseProvider>
+    </ChakraProvider>
   </React.StrictMode>,
 )
