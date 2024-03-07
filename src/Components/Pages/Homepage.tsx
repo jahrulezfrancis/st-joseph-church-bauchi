@@ -3,6 +3,9 @@ import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
 import ParishOfficialsCard from "../Cards/OfficialsCard";
+import Catechist from "../../assets/catechist.jpg";
+import ParishDayCelebration from "../../assets/celebratin-congregation.jpg"
+import SeedSowingImage from "../../assets/seed-sowing.jpeg"
 import EventCards from "../Cards/EventCards";
 
 
@@ -67,9 +70,13 @@ export default function Homepage() {
 
             {/* event section */}
             <Box>
-                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
-                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
-                <EventCards eventTitle="" eventDescription="" eventDate="" evenImage="" eventLink="" />
+                <Flex gap={10} wrap="wrap">
+                    {/* <EventCards eventTitle="Stations of the Cross" eventDescription="Experience the journey of Jesus through the Stations of the Cross, reflecting on his path to Calvary with prayer and contemplation" eventDate="Wed & Fri" evenImage={CrossImage} eventLink="" />
+                    <EventCards eventTitle="Weekly Worship" eventDescription="We come together as a family that we are to worship God through praises and worships" eventDate="Wednessdays" evenImage={WeeklyWorship} eventLink="" /> */}
+                    <EventCards eventTitle="Parish Day" eventDescription="Description for parish day comes here" eventDate="20th March" eventImage={ParishDayCelebration} eventLink="" />
+                    <EventCards eventTitle="Catechist Day" eventDescription="Description for Catechist day goes here" eventDate="20th March" eventImage={Catechist} eventLink="" />
+                    <EventCards eventTitle="Family seed sowing" eventDescription="Family seed sowing is currently ongoing" eventDate="20th March" eventImage={SeedSowingImage} eventLink="" />
+                </Flex>
             </Box>
 
             {/* donations */}
