@@ -1,4 +1,4 @@
-import { Box, Stack, Text, Image } from "@chakra-ui/react";
+import { Box, Stack, Text, Image, } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 interface OfficialCardProps {
@@ -10,7 +10,7 @@ interface OfficialCardProps {
 export default function ParishOfficialsCard(props: OfficialCardProps) {
     return (
         <Box>
-            <Stack padding={5} justify="space-between" align="center" width={["auto", "auto", "320px"]}>
+            <Stack padding={5} justify="space-between" border="solid 2px black" borderRadius="8px" align="center" width={["auto", "auto", "320px"]}>
                 <Text>{props.personPosition}</Text>
                 <Image height={"300px"} objectFit="cover" width={"280px"} src={props.personImage} alt={props.personName} />
                 <Text>{props.personName}</Text>
