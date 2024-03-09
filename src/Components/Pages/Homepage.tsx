@@ -7,6 +7,9 @@ import Catechist from "../../assets/catechist.jpg";
 import ParishDayCelebration from "../../assets/celebratin-congregation.jpg"
 import SeedSowingImage from "../../assets/seed-sowing.jpeg"
 import EventCards from "../Cards/EventCards";
+import CatechistImage from "../../assets/catechist_b.jpg";
+import RevFrImage from "../../assets/reveren_father2.jpg";
+import RevFrImage2 from "../../assets/Reveren_Father.jpg";
 
 
 export default function Homepage() {
@@ -43,9 +46,9 @@ export default function Homepage() {
             <Box>
                 <Heading textAlign="center">Our Parish Officials</Heading>
                 <Flex justify="center" wrap="wrap" gap={10}>
-                    <ParishOfficialsCard personName="Fr Claytus" personImage="" personPosition="Parish Priest" />
-                    <ParishOfficialsCard personName="Fr Kameze" personImage="" personPosition="Asst Parish Priest" />
-                    <ParishOfficialsCard personName="Cath Peter Tsakani" personImage="" personPosition="" />
+                    <ParishOfficialsCard personName="Fr Claytus" personImage={RevFrImage} personPosition="Parish Priest" />
+                    <ParishOfficialsCard personName="Fr Kameze" personImage={RevFrImage2} personPosition="Asst Parish Priest" />
+                    <ParishOfficialsCard personName="Cath Peter Tsakani" personImage={CatechistImage} personPosition="Catechist" />
                 </Flex>
             </Box>
 
@@ -62,16 +65,28 @@ export default function Homepage() {
             {/* Minisries section */}
 
             {/* Reflection/sermon */}
-            <Box padding={10}>
-                <Heading>Reflections</Heading>
-                <Text width={["auto", "50%"]}><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+            <Box mt={50}>
+                <Heading textAlign="center">Spiritual Readings</Heading>
+                <Flex justify="center" align="center" gap="10px" wrap="wrap" padding={10}>
+                    <Box width={["auto", "auto", "700px"]} pl={5} borderLeft={"10px solid #483534"}>
+                        <Heading>Reflections</Heading>
+                        <Text width="100%"><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+                        </Text>
+                    </Box>
 
-                </Text>
+                    {/* Daily reflections section */}
+                    <Box width={["auto", "auto", "700px"]} pl={5} borderLeft={"10px solid #483534"}>
+                        <Heading>Daily Readings</Heading>
+                        <Text width="100%"><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+                        </Text>
+                    </Box>
+                </Flex>
             </Box>
 
             {/* event section */}
-            <Box>
-                <Flex gap={10} wrap="wrap">
+            <Box mt={100}>
+                <Heading textAlign="center">Ongoing/Upcoming event</Heading>
+                <Flex justify="center" pt={10} gap={10} wrap="wrap">
                     <EventCards eventTitle="Parish Day" eventDescription="Description for parish day comes here" eventDate="20th March" eventImage={ParishDayCelebration} eventLink="" />
                     <EventCards eventTitle="Catechist Day" eventDescription="Description for Catechist day goes here" eventDate="20th March" eventImage={Catechist} eventLink="" />
                     <EventCards eventTitle="Family seed sowing" eventDescription="Family seed sowing is currently ongoing" eventDate="20th March" eventImage={SeedSowingImage} eventLink="" />
