@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Stack, Text, Center, Flex, Divider } from "@chakra-ui/react";
+import { Box, Button, Heading, Stack, Text, Center, Flex, Divider, Tooltip, Image } from "@chakra-ui/react";
 import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
@@ -12,7 +12,7 @@ import RevFrImage from "../../assets/reveren_father2.jpg";
 import RevFrImage2 from "../../assets/Reveren_Father.jpg";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { GiClothes } from "react-icons/gi";
-import GalleryCard from "../Cards/GalleryCard";
+import { galleryData } from "../DummyData";
 
 
 
@@ -122,10 +122,22 @@ export default function Homepage() {
             <Box>
                 <Stack align="center" mt="100px">
                     <Heading>Saint Joseph's Gallery</Heading>
-                    <GalleryCard />
                     <Text>
                         View photos and videos of our church events, services, community projects, and cultural celebrations that reflect the vibrant spirit of St. Joseph the Worker Catholic Church.
                     </Text>
+                    <Box>
+                        <Flex gap={5} wrap={"wrap"}>
+                            {galleryData.map((item) => {
+                                return (
+                                    <Box key={item.id}>
+                                        <Tooltip label={item.event}>
+                                            <Image width="300px" src={item.imgUrl} alt={item.event + "'s image"} />
+                                        </Tooltip>
+                                    </Box>
+                                )
+                            })}
+                        </Flex>
+                    </Box>
                 </Stack>
             </Box>
 
