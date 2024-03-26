@@ -3,10 +3,17 @@ import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
 import ParishOfficialsCard from "../Cards/OfficialsCard";
+import EventCards from "../Cards/EventCards";
 import Catechist from "../../assets/catechist.jpg";
 import ParishDayCelebration from "../../assets/celebratin-congregation.jpg"
 import SeedSowingImage from "../../assets/seed-sowing.jpeg"
-import EventCards from "../Cards/EventCards";
+import CatechistImage from "../../assets/catechist_b.jpg";
+import RevFrImage from "../../assets/reveren_father2.jpg";
+import RevFrImage2 from "../../assets/Reveren_Father.jpg";
+import { BiSolidDonateHeart } from "react-icons/bi";
+import { GiClothes } from "react-icons/gi";
+
+
 
 
 export default function Homepage() {
@@ -43,9 +50,9 @@ export default function Homepage() {
             <Box>
                 <Heading textAlign="center">Our Parish Officials</Heading>
                 <Flex justify="center" wrap="wrap" gap={10}>
-                    <ParishOfficialsCard personName="Fr Claytus" personImage="" personPosition="Parish Priest" />
-                    <ParishOfficialsCard personName="Fr Kameze" personImage="" personPosition="Asst Parish Priest" />
-                    <ParishOfficialsCard personName="Cath Peter Tsakani" personImage="" personPosition="" />
+                    <ParishOfficialsCard personName="Fr Claytus" personImage={RevFrImage} personPosition="Parish Priest" />
+                    <ParishOfficialsCard personName="Fr Kameze" personImage={RevFrImage2} personPosition="Asst Parish Priest" />
+                    <ParishOfficialsCard personName="Cath Peter Tsakani" personImage={CatechistImage} personPosition="Catechist" />
                 </Flex>
             </Box>
 
@@ -62,16 +69,28 @@ export default function Homepage() {
             {/* Minisries section */}
 
             {/* Reflection/sermon */}
-            <Box padding={10}>
-                <Heading>Reflections</Heading>
-                <Text width={["auto", "50%"]}><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+            <Box mt={50}>
+                <Heading textAlign="center">Spiritual Readings</Heading>
+                <Flex justify="center" align="center" gap="10px" wrap="wrap" padding={10}>
+                    <Box width={["auto", "auto", "700px"]} pl={5} borderLeft={"10px solid #483534"}>
+                        <Heading>Reflections</Heading>
+                        <Text width="100%"><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+                        </Text>
+                    </Box>
 
-                </Text>
+                    {/* Daily reflections section */}
+                    <Box width={["auto", "auto", "700px"]} pl={5} borderLeft={"10px solid #483534"}>
+                        <Heading>Daily Readings</Heading>
+                        <Text width="100%"><strong>From the book of:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, animi ratione dolorum assumenda aspernatur? Saepe, vitae est! Dolores aperiam obcaecati deserunt reprehenderit tempore cupiditate ipsam, odit fuga impedit quia.
+                        </Text>
+                    </Box>
+                </Flex>
             </Box>
 
             {/* event section */}
-            <Box>
-                <Flex gap={10} wrap="wrap">
+            <Box mt={100}>
+                <Heading textAlign="center">Ongoing/Upcoming event</Heading>
+                <Flex justify="center" pt={10} gap={10} wrap="wrap">
                     <EventCards eventTitle="Parish Day" eventDescription="Description for parish day comes here" eventDate="20th March" eventImage={ParishDayCelebration} eventLink="" />
                     <EventCards eventTitle="Catechist Day" eventDescription="Description for Catechist day goes here" eventDate="20th March" eventImage={Catechist} eventLink="" />
                     <EventCards eventTitle="Family seed sowing" eventDescription="Family seed sowing is currently ongoing" eventDate="20th March" eventImage={SeedSowingImage} eventLink="" />
@@ -84,26 +103,28 @@ export default function Homepage() {
                     <Heading>Help spread the word of God through Donations</Heading>
                     <Text> Support the ministries and outreach of St. Joseph the Worker Catholic Church through your generous donations. Your contributions help us continue our mission of service and love.</Text>
                 </Stack>
-                <Flex mt="50px" justify="center" wrap="wrap" gap={10}>
-                    <Stack align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                <Flex mt="50px" justify="center" wrap="wrap" gap={12}>
+                    <Stack _hover={{ borderBottomRadius: "8", borderBottom: "5px solid #910A67" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
                         <Heading>Cash Donations</Heading>
                         <Text>Consider supporting our cause with a cash donation. Your financial contribution will allow us to continue providing essential services and support to the parish and to those in need. With your generosity, we can make a significant impact and help improve the lives of individuals in our community. Any amount donated makes a difference, and we are grateful for your support.</Text>
-                        <Button>Donate now</Button>
+                        <Button leftIcon={<BiSolidDonateHeart />} color="white" bg="#910A67">Donate now</Button>
                     </Stack>
-                    <Stack align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                    <Stack _hover={{ borderBottomRadius: "8", borderBottom: "5px solid #910A67" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
                         <Heading>Clothes donation</Heading>
                         <Text>Help us make a difference by donating clothes to those in need. Your contribution of gently used clothing can provide warmth and comfort to individuals facing challenging circumstances. By donating clothes, you are directly impacting the lives of others and making a positive difference in our community. Your support is truly appreciated.</Text>
-                        <Button>Donate now</Button>
+                        <Button leftIcon={<GiClothes />} color="white" bg="#910A67">Donate now</Button>
                     </Stack>
                 </Flex>
             </Box>
 
             {/* gallery */}
             <Box>
-                <Heading>Saint Joseph's Gallery</Heading>
-                <Text>
-                    View photos and videos of our church events, services, community projects, and cultural celebrations that reflect the vibrant spirit of St. Joseph the Worker Catholic Church.
-                </Text>
+                <Stack align="center" mt="100px">
+                    <Heading>Saint Joseph's Gallery</Heading>
+                    <Text>
+                        View photos and videos of our church events, services, community projects, and cultural celebrations that reflect the vibrant spirit of St. Joseph the Worker Catholic Church.
+                    </Text>
+                </Stack>
             </Box>
 
             <footer>
