@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Stack, Text, Center, Flex, Divider } from "@chakra-ui/react";
+import { Box, Button, Heading, Stack, Text, Center, Flex, Divider, Tooltip, Image } from "@chakra-ui/react";
 import BgImage from "../../assets/cathedral.jpg"
 import { Link } from "react-router-dom";
 import MassSectionCard from "../Cards/MassSectionCards";
@@ -12,6 +12,7 @@ import RevFrImage from "../../assets/reveren_father2.jpg";
 import RevFrImage2 from "../../assets/Reveren_Father.jpg";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { GiClothes } from "react-icons/gi";
+import { galleryData } from "../DummyData";
 
 
 
@@ -104,15 +105,15 @@ export default function Homepage() {
                     <Text> Support the ministries and outreach of St. Joseph the Worker Catholic Church through your generous donations. Your contributions help us continue our mission of service and love.</Text>
                 </Stack>
                 <Flex mt="50px" justify="center" wrap="wrap" gap={12}>
-                    <Stack _hover={{ borderBottomRadius: "8", borderBottom: "5px solid #910A67" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                    <Stack borderRadius={8} _hover={{ boxShadow: "0px 0px 39px 3px rgba(202,201,203,0.75)" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
                         <Heading>Cash Donations</Heading>
                         <Text>Consider supporting our cause with a cash donation. Your financial contribution will allow us to continue providing essential services and support to the parish and to those in need. With your generosity, we can make a significant impact and help improve the lives of individuals in our community. Any amount donated makes a difference, and we are grateful for your support.</Text>
-                        <Button leftIcon={<BiSolidDonateHeart />} color="white" bg="#910A67">Donate now</Button>
+                        <Button _hover={{ bgColor: "#B35897" }} leftIcon={<BiSolidDonateHeart />} color="white" bg="#910A67">Donate now</Button>
                     </Stack>
-                    <Stack _hover={{ borderBottomRadius: "8", borderBottom: "5px solid #910A67" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
+                    <Stack borderRadius={8} _hover={{ boxShadow: "0px 0px 39px 3px rgba(202,201,203,0.75)" }} padding={5} borderBottomRadius={8} align="center" justify="space-between" height="auto" textAlign="center" width={fluidBox}>
                         <Heading>Clothes donation</Heading>
                         <Text>Help us make a difference by donating clothes to those in need. Your contribution of gently used clothing can provide warmth and comfort to individuals facing challenging circumstances. By donating clothes, you are directly impacting the lives of others and making a positive difference in our community. Your support is truly appreciated.</Text>
-                        <Button leftIcon={<GiClothes />} color="white" bg="#910A67">Donate now</Button>
+                        <Button _hover={{ bgColor: "#B35897" }} leftIcon={<GiClothes />} color="white" bg="#910A67">Donate now</Button>
                     </Stack>
                 </Flex>
             </Box>
@@ -124,6 +125,19 @@ export default function Homepage() {
                     <Text>
                         View photos and videos of our church events, services, community projects, and cultural celebrations that reflect the vibrant spirit of St. Joseph the Worker Catholic Church.
                     </Text>
+                    <Box>
+                        <Flex gap={5} wrap={"wrap"}>
+                            {galleryData.map((item) => {
+                                return (
+                                    <Box key={item.id}>
+                                        <Tooltip label={item.event}>
+                                            <Image width="300px" src={item.imgUrl} alt={item.event + "'s image"} />
+                                        </Tooltip>
+                                    </Box>
+                                )
+                            })}
+                        </Flex>
+                    </Box>
                 </Stack>
             </Box>
 
