@@ -9,8 +9,8 @@ export default function NavItemsRenderers({ direction }: { direction: 'row' | 'c
             {navItems.map((item) => (
                 <NavLink className={({ isActive }) =>
                     isActive ? "active" : "in-active"
-                } target={item.name === "Github" ? "_blank" : ""} key={item.id} to={item.path}>
-                    <Heading color="white" fontSize={23}>
+                } key={item.id} to={item.path}>
+                    <Heading color="white" fontSize={20}>
                         {item.name}
                     </Heading>
                 </NavLink>
